@@ -1,4 +1,11 @@
+# robots.txt for kubilaiswf.com
+# Kubilay Karaçar - Personal Portfolio Website
+
 User-agent: *
 Allow: /
 
+# Sitemaps
 Sitemap: https://kubilaiswf.com/sitemap.xml
+
+# Disallow specific paths
+Disallow: /nul/

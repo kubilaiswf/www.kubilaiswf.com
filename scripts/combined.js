@@ -12,13 +12,13 @@ if(themeToggle){themeToggle.addEventListener("click",(e)=>{e.preventDefault();to
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",(e)=>{if(!localStorage.getItem("theme")){setTheme(e.matches?"dark":"light")}});function updateProfileVector(){const theme=htmlElement.getAttribute("data-theme")||"dark";const vectorImg=document.querySelector('.profile-photo-vector');if(vectorImg){if(theme==="light"){vectorImg.src="images/vektorel-beyaz.webp";vectorImg.srcset="images/vektorel-beyaz-small.webp 400w, images/vektorel-beyaz.webp 800w"}else{vectorImg.src="images/vektorel-siyah.webp";vectorImg.srcset="images/vektorel-siyah-small.webp 400w, images/vektorel-siyah.webp 800w"}}}
 updateProfileVector();if(themeToggle){themeToggle.addEventListener("click",()=>{setTimeout(updateProfileVector,10)})}
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",()=>{setTimeout(updateProfileVector,10)})});document.addEventListener("DOMContentLoaded",function(){const phrases=["junior developer","software enthusiast","web designer","AI/ML enthusiast","computer engineer","ww2 history buff"];const typingSpeed=80;const erasingSpeed=40;const delayBetweenPhrases=1500;let phraseIndex=0;let charIndex=0;let isTyping=!0;const textElement=document.getElementById("typing-text");function typeText(){if(isTyping){if(charIndex<phrases[phraseIndex].length){textElement.textContent+=phrases[phraseIndex].charAt(charIndex);charIndex++;setTimeout(typeText,typingSpeed)}else{isTyping=!1;setTimeout(typeText,delayBetweenPhrases)}}else{if(charIndex>0){textElement.textContent=phrases[phraseIndex].substring(0,charIndex-1);charIndex--;setTimeout(typeText,erasingSpeed)}else{isTyping=!0;phraseIndex=(phraseIndex+1)%phrases.length;setTimeout(typeText,typingSpeed)}}}
-typeText();const animatedTitle=document.querySelector('.animated-title');if(animatedTitle){animatedTitle.classList.add('show')}});setTimeout(()=>{console.clear();console.log(`%c
-  
-  █  █▀  ▄   ███   ▄█ █    ██   ▄█    ▄▄▄▄▄    ▄ ▄   ▄████  
-  █▄█     █  █  █  ██ █    █ █  ██   █     ▀▄ █   █  █▀   ▀ 
-  █▀▄  █   █ █ ▀ ▄ ██ █    █▄▄█ ██ ▄  ▀▀▀▀▄  █ ▄   █ █▀▀    
-  █  █ █   █ █  ▄▀ ▐█ ███▄ █  █ ▐█  ▀▄▄▄▄▀   █  █  █ █      
-    █  █▄ ▄█ ███    ▐     ▀   █  ▐            █ █ █   █     
-   ▀    ▀▀▀                  █                 ▀ ▀     ▀    
-                            ▀                                                            
+typeText();const animatedTitle=document.querySelector('.animated-title');if(animatedTitle){animatedTitle.classList.add('show')}});document.addEventListener('DOMContentLoaded',function(){const navbarToggler=document.querySelector('.navbar-toggler');const navbarCollapse=document.querySelector('.navbar-collapse');const navLinks=document.querySelectorAll('.nav-link');if(navbarToggler&&navbarCollapse){navbarToggler.addEventListener('click',function(){const isExpanded=navbarCollapse.classList.contains('show');navbarCollapse.classList.toggle('show');navbarToggler.setAttribute('aria-expanded',!isExpanded)});navLinks.forEach(link=>{link.addEventListener('click',function(){navbarCollapse.classList.remove('show');navbarToggler.setAttribute('aria-expanded','false')})});document.addEventListener('click',function(event){const isClickInsideNav=navbarToggler.contains(event.target)||navbarCollapse.contains(event.target);if(!isClickInsideNav&&navbarCollapse.classList.contains('show')){navbarCollapse.classList.remove('show');navbarToggler.setAttribute('aria-expanded','false')}})}});window.addEventListener('scroll',function(){const scrollProgress=document.querySelector('.scroll-progress');if(scrollProgress){const windowHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;const scrolled=(window.scrollY/windowHeight)*100;scrollProgress.style.width=scrolled+'%';scrollProgress.style.opacity=window.scrollY>0?'1':'0'}});setTimeout(()=>{console.clear();console.log(`%c
+
+  █  █▀  ▄   ███   ▄█ █    ██   ▄█    ▄▄▄▄▄    ▄ ▄   ▄████
+  █▄█     █  █  █  ██ █    █ █  ██   █     ▀▄ █   █  █▀   ▀
+  █▀▄  █   █ █ ▀ ▄ ██ █    █▄▄█ ██ ▄  ▀▀▀▀▄  █ ▄   █ █▀▀
+  █  █ █   █ █  ▄▀ ▐█ ███▄ █  █ ▐█  ▀▄▄▄▄▀   █  █  █ █
+    █  █▄ ▄█ ███    ▐     ▀   █  ▐            █ █ █   █
+   ▀    ▀▀▀                  █                 ▀ ▀     ▀
+                            ▀
     `,"color: red;");console.log(`Check my GitHub for more cool stuff: %chttps://github.com/kubilaiswf`,"color: red; text-decoration: underline;")},500)

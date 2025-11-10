@@ -8,9 +8,15 @@
     <meta name="description"
         content="Merhaba! Ben Kubilay Karaçar, çoğu kişi beni çevrimiçi ortamda kubilaiswf olarak tanır. Bu, kendim ve projelerim hakkında bilgi paylaştığım kişisel portföy sitemdir.">
     <meta name="keywords"
-        content="Kubilay Karaçar, kubilaiswf, Geliştirici, Yazılım Mühendisi, Python, Makine Öğrenmesi, Web Geliştirme">
+        content="Kubilay Karaçar, Kubilay, kubilaiswf, kubilai.swf, Geliştirici, Yazılım Mühendisi, Yazılım Geliştirici, Python Developer, JavaScript Geliştirici, Makine Öğrenmesi, Yapay Zeka, Web Geliştirme, Portföy, Bilgisayar Mühendisliği, Turkish Technic, Frontend Developer, Backend Developer, Full Stack">
     <meta name="author" content="Kubilay Karaçar">
     <meta name="robots" content="index, follow">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1a1a1b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
 
     <link rel="canonical" href="https://kubilaiswf.com/tr">
 
@@ -64,7 +70,8 @@
     <!-- Stylesheet loading optimized -->
     <link rel="stylesheet" href="/styles/combined.css">
     <link rel="stylesheet" href="/styles/language-switcher.css">
-    
+    <link rel="stylesheet" href="/styles/contact-form.css">
+
     <!-- Immediate theme application before page load -->
     <script src="scripts/theme-preload.js"></script>
 
@@ -97,7 +104,6 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://code.jquery.com">
 
     <!-- Favicon configuration (compressed) -->
     <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
@@ -111,17 +117,50 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Kubilay Karaçar",
-      "alternateName": "kubilaiswf",
+      "alternateName": ["kubilaiswf", "Kubilay", "kubilai.swf"],
       "url": "https://kubilaiswf.com/",
       "image": "https://kubilaiswf.com/images/preview.webp",
       "email": "kubilay.karacar@hotmail.com",
       "jobTitle": "Yazılım Geliştirici",
+      "description": "Python, JavaScript, Makine Öğrenmesi ve Web Geliştirme konularında uzmanlaşmış Yazılım Geliştirici. Yapay Zeka/Makine Öğrenmesi ve full-stack geliştirme tutkunu Bilgisayar Mühendisliği öğrencisi.",
       "sameAs": [
         "https://instagram.com/kubilai.swf",
         "https://linkedin.com/in/kubilay-karaçar-87376330a",
         "https://github.com/kubilaiswf"
       ],
-      "knowsAbout": ["Python", "Makine Öğrenmesi", "Web Geliştirme", "Sunucu Yönetimi", "Yazılım Geliştirme", "React JS", "Node JS"]
+      "knowsAbout": [
+        "Python",
+        "JavaScript",
+        "Makine Öğrenmesi",
+        "Yapay Zeka",
+        "Web Geliştirme",
+        "Sunucu Yönetimi",
+        "Yazılım Geliştirme",
+        "React JS",
+        "Node JS",
+        "Bilgisayar Mühendisliği",
+        "Frontend Geliştirme",
+        "Backend Geliştirme",
+        "Full Stack Geliştirme",
+        "TensorFlow",
+        "Vite",
+        "Tailwind CSS",
+        "Veri Analizi",
+        "MRO Analizi"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Bilgisayar Mühendisliği"
+      },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Yazılım Geliştirici",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Türkiye"
+        },
+        "skills": "Python, JavaScript, Makine Öğrenmesi, Yapay Zeka, Web Geliştirme, Full Stack Geliştirme"
+      }
     }
     </script>
 
@@ -130,22 +169,36 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "Kubilay Karaçar Portföyü",
+      "alternateName": "kubilaiswf Portföyü",
       "url": "https://kubilaiswf.com/",
-      "description": "Merhaba! Ben Kubilay Karaçar, çoğu kişi beni çevrimiçi ortamda kubilaiswf olarak tanır. Bu, kendim ve projelerim hakkında bilgi paylaştığım kişisel portföy sitemdir."
+      "description": "Merhaba! Ben Kubilay Karaçar, çoğu kişi beni çevrimiçi ortamda kubilaiswf olarak tanır. Bu, kendim ve projelerim hakkında bilgi paylaştığım kişisel portföy sitemdir.",
+      "author": {
+        "@type": "Person",
+        "name": "Kubilay Karaçar"
+      },
+      "inLanguage": ["tr", "en"],
+      "keywords": "Kubilay Karaçar, Kubilay, kubilaiswf, kubilai.swf, Yazılım Geliştirici, Portföy"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Kubilay Karaçar",
+        "alternateName": ["kubilaiswf", "Kubilay", "kubilai.swf"]
+      },
+      "url": "https://kubilaiswf.com/tr"
     }
     </script>
 </head>
 
 <body>
+    <div class="scroll-progress"></div>
     <div id="particles-js"></div>
     <div class="mouse-trail-container"></div>
-    
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="/" class="language-option">EN</a>
-        <span class="language-separator">|</span>
-        <a href="/tr" class="language-option active">TR</a>
-    </div>
 
     <!-- Theme Toggle Button -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Karanlık/aydınlık modu değiştir">
@@ -161,6 +214,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-transparent" aria-label="Ana navigasyon">
         <div class="container">
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü aç/kapat">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -181,6 +237,13 @@
     </nav>
 
     <section id="intro" class="intro">
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <a href="/" class="language-option" lang="en">EN</a>
+            <span class="language-separator">|</span>
+            <a href="/tr" class="language-option active" lang="tr">TR</a>
+        </div>
+
         <div class="container">
             <!-- Profile photo container -->
             <div class="profile-photo-container">
@@ -332,26 +395,34 @@
             <h2 class="text-center mb-5 section-title">Projeler</h2>
             <ul id="repo-list" class="list-group">
                 <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="100">
-                    <a href="https://github.com/kubilaiswf/face-2-cursor" target="_blank" class="font-weight-bold">Face
-                        2 Cursor</a>
-                    <span class="language-badge python">Python</span>
-                    <p class="mb-1 text-muted">FaceCursor, bir web kamerası aracılığıyla yüz hareketlerini takip ederek fare kontrolünü sağlayan bir Python projesidir.</p>
+                    <a href="https://github.com/kubilaiswf/mro-analysis-app" target="_blank" class="font-weight-bold">MRO Analiz Uygulaması</a>
+                    <span class="language-badge js">JavaScript</span>
+                    <p class="mb-1 text-muted">Turkish Technic stajı sırasında oluşturulan MRO (Bakım, Onarım ve Revizyon) verilerini analiz eden ve görselleştiren dashboard uygulaması. Akıllı veri analizi için Gemini AI entegrasyonu, özelleştirilebilir filtreler içerir ve Vite + Tailwind CSS ile geliştirilmiştir.</p>
                 </li>
                 <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://github.com/kubilaiswf/ai-image-captioning-blip2" target="_blank" class="font-weight-bold">BLIP-2 ile Yapay Zeka Görsel Açıklama</a>
+                    <span class="language-badge jupyter">Jupyter Notebook</span>
+                    <p class="mb-1 text-muted">OBSS Yapay Zeka Görsel Açıklama Yarışması (2025 Staj Programı) için başvuru. Salesforce BLIP-2 OPT 2.7B modelini zero-shot inference yaklaşımıyla kullanır. Google Colab'ın ücretsiz T4 GPU'su için 8-bit quantization ile optimize edilmiştir.</p>
+                </li>
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://github.com/kubilaiswf/face-2-cursor" target="_blank" class="font-weight-bold">Face 2 Cursor</a>
+                    <span class="language-badge python">Python</span>
+                    <p class="mb-1 text-muted">Web kamerası ile takip edilen yüz hareketleriyle fare kontrolü sağlayan uygulama. MediaPipe ile gerçek zamanlı yüz işaret noktası tespiti, burun tabanlı imleç kontrolü, tıklama için göz kırpma algılama ve Tkinter GUI ile özelleştirilebilir hassasiyet içerir.</p>
+                </li>
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="400">
                     <a href="https://github.com/kubilaiswf/spam-classification-supervised-unsupervised" target="_blank"
                         class="font-weight-bold">Gözetimli ve Gözetimsiz Öğrenme ile Spam Sınıflandırması</a>
                     <span class="language-badge jupyter">Jupyter Notebook</span>
-                    <p class="mb-1 text-muted">Hem gözetimli (Lojistik Regresyon, Karar Ağaçları) hem de gözetimsiz (Mini Batch k-Means) öğrenme algoritmalarını kullanarak e-posta spam tespiti için bir makine öğrenmesi projesi.
-                    </p>
+                    <p class="mb-1 text-muted">Aygaz Makine Öğrenmesi Bootcamp'te geliştirilen e-posta spam tespiti projesi. Gözetimli (Lojistik Regresyon, Karar Ağaçları) ve gözetimsiz (k-Means, Mini Batch k-Means) yaklaşımları karşılaştırır. TF-IDF vektörizasyonu ile optimize edilmiş Lojistik Regresyon ile %98.53 doğruluk elde edildi.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="300">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="500">
                     <a href="https://github.com/kubilaiswf/kubicord" target="_blank"
                         class="font-weight-bold">kubicord</a>
                     <span class="language-badge html">HTML</span> <span class="language-badge css">CSS</span> <span
                         class="language-badge js">JS</span>
                     <p class="mb-1 text-muted">Kubicord, WebRTC ve WebSocket kullanılarak gerçek zamanlı iletişim için oluşturulmuş basit bir eşler arası sohbet uygulamasıdır. Bu uygulama, kullanıcıların WebSocket kullanarak bir sinyal sunucusu tarafından kolaylaştırılan doğrudan eşler arası bağlantı üzerinden mesaj alışverişi yapmasını sağlar.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="400">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="600">
                     <a href="https://github.com/kubilaiswf/kurebiad" target="_blank"
                         class="font-weight-bold">kurebiad</a>
                     <span class="language-badge html">HTML</span> <span class="language-badge css">CSS</span> <span
@@ -364,18 +435,11 @@
 
     <footer class="py-4 text-center">
         <div class="container">
-            <p class="was-here">İlgileniyor musunuz? <a href="mailto:kubilay.karacar@hotmail.com" class="contact-link">İletişime geçin.</a></p>
             <p class="was-here">░▒▓█ 0x6b7562696c6169737766 was here █▓▒░</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
-
-    <!-- jQuery'i sadece kesinlikle gerekiyorsa yükle -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
-
-    <!-- Bootstrap JS bileşenlerinden sadece kullandıklarını yükle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <!-- AOS'u mobil için azaltılmış ayarlarla yükle -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer onload="
@@ -391,6 +455,7 @@
     
     <!-- combined.js dosyanı küçült ve optimize et -->
     <script src="scripts/combined.js" defer></script>
+    <script src="scripts/contact-form.js" defer></script>
 
     <!-- Page load script -->
     <script>

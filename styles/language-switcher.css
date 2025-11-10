@@ -1,9 +1,9 @@
 /* Language Switcher Styles */
 .language-switcher {
-    position: fixed;
-    top: 5px;
+    position: absolute;
+    top: 70px;
     right: 20px;
-    z-index: 1100;
+    z-index: 9999;
     background-color: rgba(18, 18, 18, 0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -75,7 +75,7 @@ html[data-theme="light"] .language-separator {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .language-switcher {
-        top: 10px;
+        top: 70px;
         right: 15px;
         font-size: 12px;
         padding: 4px 10px;
