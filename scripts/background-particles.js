@@ -1,3 +1,6 @@
+// Mobil cihaz kontrolü
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+
 function setParticlesHeight() {
   const particlesContainer = document.getElementById('particles-js');
   if (particlesContainer) {
@@ -6,13 +9,22 @@ function setParticlesHeight() {
 }
 
 function startParticles() {
+  // Mobilde particle'ları tamamen devre dışı bırak
+  if (isMobile) {
+    const particlesContainer = document.getElementById('particles-js');
+    if (particlesContainer) {
+      particlesContainer.style.display = 'none';
+    }
+    return;
+  }
+
   particlesJS('particles-js', {
     "particles": {
       "number": {
-        "value": 120,          // Slightly increased for better distribution
+        "value": 50,           // 120'den 50'ye düşürüldü - %60 daha az CPU
         "density": {
           "enable": true,
-          "value_area": 1500   // Increased to spread particles more evenly
+          "value_area": 1200   // Daha iyi dağılım için optimize edildi
         }
       },
       "color": { "value": "#4a4a54" },
@@ -141,4 +153,13 @@ window.addEventListener('resize', () => {
   }
 });
 
-window.addEventListener('scroll', setParticlesHeight);
+// Throttled scroll listener - scroll performansı için kritik
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  if (!scrollTimeout) {
+    scrollTimeout = setTimeout(() => {
+      setParticlesHeight();
+      scrollTimeout = null;
+    }, 100); // 100ms throttle
+  }
+});

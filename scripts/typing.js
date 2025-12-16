@@ -7,41 +7,59 @@ document.addEventListener("DOMContentLoaded", function() {
         "computer engineer",
         "WW2 history buff"
     ];
-    
+
     const typingSpeed = 80;
     const erasingSpeed = 40;
     const delayBetweenPhrases = 1500;
-    
+
     let phraseIndex = 0;
     let charIndex = 0;
     let isTyping = true;
+    let timeoutId = null;
     const textElement = document.getElementById("typing-text");
-    
+
+    // Sayfa görünür değilse animasyonu durdur (performans için)
+    let isVisible = true;
+    document.addEventListener('visibilitychange', () => {
+        isVisible = !document.hidden;
+        if (isVisible && !timeoutId) {
+            typeText();
+        }
+    });
+
     function typeText() {
+        if (!isVisible) {
+            timeoutId = null;
+            return;
+        }
+
+        const currentPhrase = phrases[phraseIndex];
+
         if (isTyping) {
-            if (charIndex < phrases[phraseIndex].length) {
-                textElement.textContent += phrases[phraseIndex].charAt(charIndex);
+            if (charIndex < currentPhrase.length) {
+                // substring kullan - daha verimli
+                textElement.textContent = currentPhrase.substring(0, charIndex + 1);
                 charIndex++;
-                setTimeout(typeText, typingSpeed);
+                timeoutId = setTimeout(typeText, typingSpeed);
             } else {
                 isTyping = false;
-                setTimeout(typeText, delayBetweenPhrases);
+                timeoutId = setTimeout(typeText, delayBetweenPhrases);
             }
         } else {
             if (charIndex > 0) {
-                textElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
                 charIndex--;
-                setTimeout(typeText, erasingSpeed);
+                textElement.textContent = currentPhrase.substring(0, charIndex);
+                timeoutId = setTimeout(typeText, erasingSpeed);
             } else {
                 isTyping = true;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(typeText, typingSpeed);
+                timeoutId = setTimeout(typeText, typingSpeed);
             }
         }
     }
-    
+
     typeText();
-    
+
     const animatedTitle = document.querySelector('.animated-title');
     if (animatedTitle) {
         animatedTitle.classList.add('show');
