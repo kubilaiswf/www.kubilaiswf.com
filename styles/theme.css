@@ -313,12 +313,12 @@ html[data-theme="light"] .contact-link:hover {
 
 /* Particles background adjustment */
 html[data-theme="light"] #particles-js {
-    background: var(--bg-color);
+    background: transparent;
     opacity: 0.7;
 }
 
 #particles-js {
-    background: var(--bg-color);
+    background: transparent;
     transition: background-color 0.5s ease;
 }
 

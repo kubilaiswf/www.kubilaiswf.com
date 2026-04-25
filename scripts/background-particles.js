@@ -18,35 +18,39 @@ function startParticles() {
     return;
   }
 
+  // Ekran genişliğine göre adaptif partikül sayısı (4K'da daha az)
+  const w = window.innerWidth;
+  const particleCount = w >= 2560 ? 50 : (w >= 1920 ? 75 : 100);
+
   particlesJS('particles-js', {
     "particles": {
       "number": {
-        "value": 50,           // 120'den 50'ye düşürüldü - %60 daha az CPU
+        "value": particleCount,
         "density": {
           "enable": true,
-          "value_area": 1200   // Daha iyi dağılım için optimize edildi
+          "value_area": 1400
         }
       },
-      "color": { "value": "#4a4a54" },
+      "color": { "value": "#5a5a66" },
       "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000" } },
-      "opacity": { "value": 0.5, "random": true }, // Added randomness to opacity
-      "size": { "value": 2, "random": true },      // Added size randomness
+      "opacity": { "value": 0.6, "random": true },
+      "size": { "value": 2.2, "random": true },
       "line_linked": {
         "enable": true,
-        "distance": 150,       // Reduced connection distance
-        "color": "#4a4a54",
-        "opacity": 0.4,        // Slightly reduced opacity for subtler connections
-        "width": 1.5
+        "distance": 160,
+        "color": "#5a5a66",
+        "opacity": 0.55,
+        "width": 1.3
       },
       "move": {
         "enable": true,
-        "speed": 0.8,          // Increased speed to prevent clumping
+        "speed": 0.8,
         "direction": "none",
-        "random": true,        // Add randomness to movement
+        "random": true,
         "straight": false,
-        "out_mode": "bounce",  // Changed to bounce to keep particles in view
+        "out_mode": "bounce",
         "bounce": true,
-        "attract": { "enable": false } // Disabled the attract feature that causes clumping
+        "attract": { "enable": false }
       }
     },
     "interactivity": {
@@ -64,14 +68,18 @@ function startParticles() {
         "remove": { "particles_nb": 2 }
       }
     },
-    "retina_detect": true
+    // 4K monitörlerde devasa framebuffer'ı önlemek için kapalı
+    "retina_detect": false
   });
 }
 
 (function addSmoothMouseAttract() {
+  if (isMobile) return;
+
   let mouse = { x: null, y: null };
   let smoothMouse = { x: null, y: null };
   let isOverCanvas = false;
+  let rafId = null;
   const smoothing = 0.12;
 
   const particlesEl = document.getElementById('particles-js');
@@ -83,33 +91,44 @@ function startParticles() {
   }
   setTimeout(updateCanvasRef, 500);
 
+  function startLoop() {
+    if (rafId === null) rafId = requestAnimationFrame(animateSmoothMouse);
+  }
+
   document.addEventListener('mousemove', function(e) {
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
-    // devicePixelRatio düzeltmesi eklendi
-    const dpr = window.devicePixelRatio || 1;
+    // retina_detect kapalı olduğundan DPR çarpımı gereksiz; canvas piksel boyutu CSS pikselleriyle 1:1
     if (
       e.clientX >= rect.left && e.clientX <= rect.right &&
       e.clientY >= rect.top && e.clientY <= rect.bottom
     ) {
-      mouse.x = (e.clientX - rect.left) * dpr;
-      mouse.y = (e.clientY - rect.top) * dpr;
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
       isOverCanvas = true;
-    } else {
+      startLoop();
+    } else if (isOverCanvas) {
       isOverCanvas = false;
+      startLoop();
     }
-  });
+  }, { passive: true });
 
   if (particlesEl) {
     particlesEl.addEventListener('mouseleave', function() {
       isOverCanvas = false;
+      startLoop();
     });
     particlesEl.addEventListener('mouseenter', function() {
       isOverCanvas = true;
+      startLoop();
     });
   }
 
   function animateSmoothMouse() {
+    rafId = null;
+    if (!window.pJSDom || !window.pJSDom[0] || !window.pJSDom[0].pJS) return;
+    const pJS = window.pJSDom[0].pJS;
+
     if (isOverCanvas && mouse.x !== null && mouse.y !== null) {
       if (smoothMouse.x === null || smoothMouse.y === null) {
         smoothMouse.x = mouse.x;
@@ -118,21 +137,20 @@ function startParticles() {
         smoothMouse.x += (mouse.x - smoothMouse.x) * smoothing;
         smoothMouse.y += (mouse.y - smoothMouse.y) * smoothing;
       }
-      if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
-        window.pJSDom[0].pJS.interactivity.mouse.pos_x = smoothMouse.x;
-        window.pJSDom[0].pJS.interactivity.mouse.pos_y = smoothMouse.y;
-        window.pJSDom[0].pJS.interactivity.status = 'mousemove';
-      }
+      pJS.interactivity.mouse.pos_x = smoothMouse.x;
+      pJS.interactivity.mouse.pos_y = smoothMouse.y;
+      pJS.interactivity.status = 'mousemove';
+      // Fare canvas üstündeyken loop devam etsin
+      rafId = requestAnimationFrame(animateSmoothMouse);
     } else {
-      if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
-        window.pJSDom[0].pJS.interactivity.mouse.pos_x = null;
-        window.pJSDom[0].pJS.interactivity.mouse.pos_y = null;
-        window.pJSDom[0].pJS.interactivity.status = 'mouseleave';
-      }
+      // Fare çıktığında smoothing'i sıfırla ve loop'u durdur
+      smoothMouse.x = null;
+      smoothMouse.y = null;
+      pJS.interactivity.mouse.pos_x = null;
+      pJS.interactivity.mouse.pos_y = null;
+      pJS.interactivity.status = 'mouseleave';
     }
-    requestAnimationFrame(animateSmoothMouse);
   }
-  animateSmoothMouse();
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -153,13 +171,12 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Throttled scroll listener - scroll performansı için kritik
 let scrollTimeout;
 window.addEventListener('scroll', () => {
   if (!scrollTimeout) {
     scrollTimeout = setTimeout(() => {
       setParticlesHeight();
       scrollTimeout = null;
-    }, 100); // 100ms throttle
+    }, 100);
   }
-});
+}, { passive: true });

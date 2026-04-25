@@ -199,6 +199,7 @@
 
 <body>
     <div class="scroll-progress"></div>
+    <div id="stars-bg" aria-hidden="true"></div>
     <div id="particles-js"></div>
     <div class="mouse-trail-container"></div>
 
@@ -410,27 +411,32 @@
             <h2 class="text-center mb-5 section-title">Projects</h2>
             <ul id="repo-list" class="list-group">
                 <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://flompt.app" target="_blank" class="font-weight-bold">Flompt</a>
+                    <span class="language-badge react-native">React Native</span>
+                    <p class="mb-1 text-muted">Co-founded social network for AI prompts where users discover, create, and share prompts for ChatGPT, Claude, Midjourney and other models. As CTO, built the platform with a NestJS backend, React Native mobile apps (iOS &amp; Android), and a Next.js landing site.</p>
+                </li>
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="200">
                     <a href="https://github.com/kubilaiswf/mro-analysis-app" target="_blank" class="font-weight-bold">MRO Analysis App</a>
                     <span class="language-badge js">JavaScript</span>
                     <p class="mb-1 text-muted">Dashboard application created during Turkish Technic internship for analyzing and visualizing MRO (Maintenance, Repair, and Overhaul) data. Features Gemini AI integration for intelligent data analysis, customizable filters, and built with Vite + Tailwind CSS.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="200">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="300">
                     <a href="https://github.com/kubilaiswf/ai-image-captioning-blip2" target="_blank" class="font-weight-bold">AI Image Captioning with BLIP-2</a>
                     <span class="language-badge jupyter">Jupyter Notebook</span>
                     <p class="mb-1 text-muted">Submission for OBSS AI Image Captioning Challenge (2025 Internship Program). Uses Salesforce BLIP-2 OPT 2.7B model with zero-shot inference approach. Optimized for Google Colab's free tier T4 GPU with 8-bit quantization.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="300">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="400">
                     <a href="https://github.com/kubilaiswf/face-2-cursor" target="_blank" class="font-weight-bold">Face 2 Cursor</a>
                     <span class="language-badge python">Python</span>
                     <p class="mb-1 text-muted">Mouse control application using facial movements tracked via webcam. Features real-time MediaPipe facial landmark detection, nose-based cursor control, eye blink detection for clicking, and customizable sensitivity with Tkinter GUI.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="400">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="500">
                     <a href="https://github.com/kubilaiswf/spam-classification-supervised-unsupervised" target="_blank"
                         class="font-weight-bold">Spam Classification with Supervised and Unsupervised Learning</a>
                     <span class="language-badge jupyter">Jupyter Notebook</span>
                     <p class="mb-1 text-muted">Email spam detection project developed during Aygaz Machine Learning Bootcamp. Compares supervised (Logistic Regression, Decision Trees) and unsupervised (k-Means, Mini Batch k-Means) approaches. Achieved 98.53% accuracy with optimized Logistic Regression using TF-IDF vectorization.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="500">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="600">
                     <a href="https://github.com/kubilaiswf/kubicord" target="_blank"
                         class="font-weight-bold">kubicord</a>
                     <span class="language-badge html">HTML</span> <span class="language-badge css">CSS</span> <span
@@ -439,7 +445,7 @@
                         WebSocket for real-time communication. This application enables users to exchange messages
                         through a direct peer-to-peer connection, facilitated by a signaling server using WebSocket.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="600">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="700">
                     <a href="https://github.com/kubilaiswf/kurebiad" target="_blank"
                         class="font-weight-bold">kurebiad</a>
                     <span class="language-badge html">HTML</span> <span class="language-badge css">CSS</span> <span
@@ -460,6 +466,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js" defer></script>
 
     <!-- AOS'u mobil için azaltılmış ayarlarla yükle -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer onload="

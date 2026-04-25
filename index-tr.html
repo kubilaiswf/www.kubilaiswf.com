@@ -197,6 +197,7 @@
 
 <body>
     <div class="scroll-progress"></div>
+    <div id="stars-bg" aria-hidden="true"></div>
     <div id="particles-js"></div>
     <div class="mouse-trail-container"></div>
 
@@ -395,34 +396,39 @@
             <h2 class="text-center mb-5 section-title">Projeler</h2>
             <ul id="repo-list" class="list-group">
                 <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://flompt.app" target="_blank" class="font-weight-bold">Flompt</a>
+                    <span class="language-badge react-native">React Native</span>
+                    <p class="mb-1 text-muted">Kullanıcıların ChatGPT, Claude, Midjourney ve diğer modeller için prompt keşfedip oluşturup paylaşabildiği, kurucu ortağı olduğum yapay zeka prompt sosyal ağı. CTO olarak NestJS backend, React Native mobil uygulamalar (iOS &amp; Android) ve Next.js landing sitesini geliştirdim.</p>
+                </li>
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="200">
                     <a href="https://github.com/kubilaiswf/mro-analysis-app" target="_blank" class="font-weight-bold">MRO Analiz Uygulaması</a>
                     <span class="language-badge js">JavaScript</span>
                     <p class="mb-1 text-muted">Turkish Technic stajı sırasında oluşturulan MRO (Bakım, Onarım ve Revizyon) verilerini analiz eden ve görselleştiren dashboard uygulaması. Akıllı veri analizi için Gemini AI entegrasyonu, özelleştirilebilir filtreler içerir ve Vite + Tailwind CSS ile geliştirilmiştir.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="200">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="300">
                     <a href="https://github.com/kubilaiswf/ai-image-captioning-blip2" target="_blank" class="font-weight-bold">BLIP-2 ile Yapay Zeka Görsel Açıklama</a>
                     <span class="language-badge jupyter">Jupyter Notebook</span>
                     <p class="mb-1 text-muted">OBSS Yapay Zeka Görsel Açıklama Yarışması (2025 Staj Programı) için başvuru. Salesforce BLIP-2 OPT 2.7B modelini zero-shot inference yaklaşımıyla kullanır. Google Colab'ın ücretsiz T4 GPU'su için 8-bit quantization ile optimize edilmiştir.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="300">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="400">
                     <a href="https://github.com/kubilaiswf/face-2-cursor" target="_blank" class="font-weight-bold">Face 2 Cursor</a>
                     <span class="language-badge python">Python</span>
                     <p class="mb-1 text-muted">Web kamerası ile takip edilen yüz hareketleriyle fare kontrolü sağlayan uygulama. MediaPipe ile gerçek zamanlı yüz işaret noktası tespiti, burun tabanlı imleç kontrolü, tıklama için göz kırpma algılama ve Tkinter GUI ile özelleştirilebilir hassasiyet içerir.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="400">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="500">
                     <a href="https://github.com/kubilaiswf/spam-classification-supervised-unsupervised" target="_blank"
                         class="font-weight-bold">Gözetimli ve Gözetimsiz Öğrenme ile Spam Sınıflandırması</a>
                     <span class="language-badge jupyter">Jupyter Notebook</span>
                     <p class="mb-1 text-muted">Aygaz Makine Öğrenmesi Bootcamp'te geliştirilen e-posta spam tespiti projesi. Gözetimli (Lojistik Regresyon, Karar Ağaçları) ve gözetimsiz (k-Means, Mini Batch k-Means) yaklaşımları karşılaştırır. TF-IDF vektörizasyonu ile optimize edilmiş Lojistik Regresyon ile %98.53 doğruluk elde edildi.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="500">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="600">
                     <a href="https://github.com/kubilaiswf/kubicord" target="_blank"
                         class="font-weight-bold">kubicord</a>
                     <span class="language-badge html">HTML</span> <span class="language-badge css">CSS</span> <span
                         class="language-badge js">JS</span>
                     <p class="mb-1 text-muted">Kubicord, WebRTC ve WebSocket kullanılarak gerçek zamanlı iletişim için oluşturulmuş basit bir eşler arası sohbet uygulamasıdır. Bu uygulama, kullanıcıların WebSocket kullanarak bir sinyal sunucusu tarafından kolaylaştırılan doğrudan eşler arası bağlantı üzerinden mesaj alışverişi yapmasını sağlar.</p>
                 </li>
-                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="600">
+                <li class="list-group-item mb-3" data-aos="fade-up" data-aos-delay="700">
                     <a href="https://github.com/kubilaiswf/kurebiad" target="_blank"
                         class="font-weight-bold">kurebiad</a>
                     <span class="language-badge html">HTML</span> <span class="language-badge css">CSS</span> <span
@@ -440,6 +446,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js" defer></script>
 
     <!-- AOS'u mobil için azaltılmış ayarlarla yükle -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer onload="
