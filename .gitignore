@@ -1,0 +1,5 @@
+# editor / tooling
+.claude/
+
+# OS junk
+.DS_Store
