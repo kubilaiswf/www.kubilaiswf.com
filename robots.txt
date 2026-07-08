@@ -6,6 +6,3 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://kubilaiswf.com/sitemap.xml
-
-# Disallow specific paths
-Disallow: /nul/
