@@ -112,6 +112,9 @@ main {
 .lang a.on {
     color: var(--head);
     font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
 }
 
 h1 {
